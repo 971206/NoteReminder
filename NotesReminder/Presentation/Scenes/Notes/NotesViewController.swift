@@ -83,8 +83,8 @@ class NotesViewController: BaseViewController {
         let url = urls[index]
         notesList[index] = note
         let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "hh:mm:ss a"
         dateFormater.timeZone = NSTimeZone(abbreviation: "GMT+0:00") as TimeZone?
+        dateFormater.dateFormat = "hh:mm:ss a"
         let dateFromStr = dateFormater.string(from: date)
         let infoToBeSaved = "\(note) + \(dateFromStr)"
         try? (infoToBeSaved).write(to: url, atomically: false, encoding: .utf8)
